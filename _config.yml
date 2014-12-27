@@ -1,0 +1,13 @@
+# Site settings
+title: Atheist Life 
+email: atheistdotlife@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Atheist Life is a website dedicated to promoting positive atheism and providing 
+  resources for both believer and non-believer alike. 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.atheist.life" # the base hostname & protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
