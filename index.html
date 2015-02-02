@@ -1,23 +1,39 @@
 ---
-layout: default
+layout: bare
+title: Home
 ---
+<section id="hero" class="light-typo">
+  <div id="cover-image" class="image-bg animated fadeIn"></div>
+  <div class="container welcome-content">
+    <div class="middle-text">
+      <h1>Welcome to Atheist Life</h1>
+      <h2><b>Atheist Life</b> is a website dedicated to the topic of atheism</h2>
+      <a class="btn smooth-scroll" href="#start">Get Started</a>
+    </div>
+  </div>
+</section>
 
-<div class="home">
+<div id="start" class="container content">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      {% for post in site.posts %}
+        {% if forloop.last %}
+          <article class="clearfix last">
+        {% else %}
+          <article class="clearfix">
+        {% endif %}
+          <div class="post-date">
+            {{ post.date | date: "%B %-d, %Y"}} | <a href="">Melissa Sing </a>
+            <!-- TODO <span><a href="">11 Comments</a></span>-->
+          </div>
+          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <p>
+            {{ post.excerpt }}
+            <a class="" href="{{ post.url }}">Read more</a>
+          </p>
+        </article>
+      {% endfor %}
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+    </div>
+  </div>
 </div>
